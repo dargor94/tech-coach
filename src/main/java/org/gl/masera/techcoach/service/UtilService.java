@@ -2,6 +2,7 @@ package org.gl.masera.techcoach.service;
 
 import lombok.RequiredArgsConstructor;
 import org.gl.masera.techcoach.util.building.BuildingMapper;
+import org.gl.masera.techcoach.util.data.log.XmlDataLoggerAdapter;
 import org.gl.masera.techcoach.util.notification.EmailNotification;
 import org.gl.masera.techcoach.util.notification.Notification;
 import org.gl.masera.techcoach.util.notification.NotificationUtil;
@@ -10,11 +11,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class BuilderService {
+public class UtilService {
 
     private static final String EMAIL = "EMAIL";
     private static final String SMS = "SMS";
     private final NotificationUtil notificationUtil;
+    private final XmlDataLoggerAdapter xmlDataLoggerAdapter;
 
     public Object[] getDtos() {
         var house = BuildingMapper.toHouseDto();
@@ -26,7 +28,6 @@ public class BuilderService {
         Notification notification;
         if (notificationType.equalsIgnoreCase(EMAIL)) {
             notification = new EmailNotification();
-
         } else if (notificationType.equalsIgnoreCase(SMS)) {
             notification = new SmsNotification();
         } else {
@@ -35,6 +36,16 @@ public class BuilderService {
         notificationUtil.sendNotification(notification);
     }
 
+
+    public void logData(String type, String xml) {
+        if (type.equalsIgnoreCase("YAML")) {
+
+        } else if (type.equalsIgnoreCase("JSON")) {
+
+        } else {
+            throw new RuntimeException("Notification type no valid");
+        }
+    }
 
 }
 

@@ -1,6 +1,6 @@
 package org.gl.masera.techcoach.service;
 
-import org.gl.masera.techcoach.util.FileReaderTask;
+import org.gl.masera.techcoach.util.file.FileReaderTask;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

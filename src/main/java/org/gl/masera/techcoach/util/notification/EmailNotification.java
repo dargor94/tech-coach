@@ -1,11 +1,13 @@
-package org.gl.masera.techcoach.util;
+package org.gl.masera.techcoach.util.notification;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class EmailNotification extends Notification {
+
     @Override
-    public void send() {
+    void send() {
         log.info("Sending email notification");
     }
+
 }

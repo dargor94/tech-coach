@@ -1,4 +1,4 @@
-package org.gl.masera.techcoach.util;
+package org.gl.masera.techcoach.util.notification;
 
 import org.springframework.stereotype.Component;
 

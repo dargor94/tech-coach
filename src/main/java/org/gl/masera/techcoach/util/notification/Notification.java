@@ -1,7 +1,7 @@
-package org.gl.masera.techcoach.util;
+package org.gl.masera.techcoach.util.notification;
 
 public abstract class Notification {
 
-   public abstract void send();
+   abstract void send();
 
 }

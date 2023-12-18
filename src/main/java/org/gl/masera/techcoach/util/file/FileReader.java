@@ -1,4 +1,4 @@
-package org.gl.masera.techcoach.util;
+package org.gl.masera.techcoach.util.file;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.ObjectUtils;

@@ -1,13 +1,13 @@
-package org.gl.masera.techcoach.util;
+package org.gl.masera.techcoach.util.building;
 
 import org.gl.masera.techcoach.dto.*;
 
 import java.util.Collections;
 import java.util.List;
 
-public class Mapper {
+public class BuildingMapper {
 
-    private Mapper() {
+    private BuildingMapper() {
 
     }
 
