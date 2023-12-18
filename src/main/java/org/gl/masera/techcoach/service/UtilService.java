@@ -1,7 +1,11 @@
 package org.gl.masera.techcoach.service;
 
 import lombok.RequiredArgsConstructor;
-import org.gl.masera.techcoach.util.*;
+import org.gl.masera.techcoach.util.building.BuildingMapper;
+import org.gl.masera.techcoach.util.notification.EmailNotification;
+import org.gl.masera.techcoach.util.notification.Notification;
+import org.gl.masera.techcoach.util.notification.NotificationUtil;
+import org.gl.masera.techcoach.util.notification.SmsNotification;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,8 +17,8 @@ public class BuilderService {
     private final NotificationUtil notificationUtil;
 
     public Object[] getDtos() {
-        var house = Mapper.toHouseDto();
-        var castle = Mapper.toCastleDto();
+        var house = BuildingMapper.toHouseDto();
+        var castle = BuildingMapper.toCastleDto();
         return new Object[]{house, castle};
     }
 
