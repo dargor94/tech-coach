@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 public class NotificationUtil {
 
     public void sendNotification(Notification notification) {
-        notification.send();
+        notification.sendNotification();
     }
 
 }

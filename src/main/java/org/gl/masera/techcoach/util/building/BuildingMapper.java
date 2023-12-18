@@ -19,7 +19,6 @@ public class BuildingMapper {
                 .build();
     }
 
-
     public static HouseDto toHouseDto() {
         return HouseDto.builder()
                 .doors(toDoors())

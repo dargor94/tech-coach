@@ -14,7 +14,6 @@ public class YamlXmlDataLoggerAdapter implements XmlDataLoggerAdapter {
     private final XmlMapper xmlMapper = new XmlMapper();
     private final YAMLMapper yamlMapper = new YAMLMapper();
 
-
     @Override
     public void convertXml(String xml) {
         try {

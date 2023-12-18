@@ -2,7 +2,7 @@ package org.gl.masera.techcoach.service;
 
 import lombok.RequiredArgsConstructor;
 import org.gl.masera.techcoach.util.building.BuildingMapper;
-import org.gl.masera.techcoach.util.data.log.XmlDataLoggerAdapter;
+import org.gl.masera.techcoach.util.data.log.DataLoggerUtil;
 import org.gl.masera.techcoach.util.notification.EmailNotification;
 import org.gl.masera.techcoach.util.notification.Notification;
 import org.gl.masera.techcoach.util.notification.NotificationUtil;
@@ -15,8 +15,9 @@ public class UtilService {
 
     private static final String EMAIL = "EMAIL";
     private static final String SMS = "SMS";
+
     private final NotificationUtil notificationUtil;
-    private final XmlDataLoggerAdapter xmlDataLoggerAdapter;
+    private final DataLoggerUtil dataLoggerUtil;
 
     public Object[] getDtos() {
         var house = BuildingMapper.toHouseDto();
@@ -36,12 +37,11 @@ public class UtilService {
         notificationUtil.sendNotification(notification);
     }
 
-
     public void logData(String type, String xml) {
         if (type.equalsIgnoreCase("YAML")) {
-
+            dataLoggerUtil.convertXmlToYaml(xml);
         } else if (type.equalsIgnoreCase("JSON")) {
-
+            dataLoggerUtil.convertXmlToJson(xml);
         } else {
             throw new RuntimeException("Notification type no valid");
         }
